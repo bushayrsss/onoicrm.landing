@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>system</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <img class="logo-img" src="../img/logo.svg" alt="">
+            <a href="../index.html" class="logo">onoi<span>crm</span></a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="menu">
+                <li><a href="../index.html">Домой</a></li>
+                <li><a href="#">Тур в системе</a></li>
+                <li><a href="price.html">Цена</a></li>
+                <li><a href="support.html">Поддержка</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section>
+    <div class="system-box">
+        <nav class="system-menu">
+            <div class="container">
+                <a href="#" class="menu-item" onclick="showContent('login')">Вход в систему</a>
+                <a href="#" class="menu-item" onclick="showContent('interface')">Обзор интерфейса</a>
+                <a href="#" class="menu-item" onclick="showContent('services')">Услуги и цены</a>
+                <a href="#" class="menu-item" onclick="showContent('payment')">Оплата услуги</a>
+                <a href="#" class="menu-item" onclick="showContent('patient')">Запись пациента</a>
+                <a href="#" class="menu-item" onclick="showContent('staff')">Создание персонала</a>
+                <a href="#" class="menu-item" onclick="showContent('youtube')">Youtube</a>
+            </div>
+        </nav>
+        <div class="system-content">
+            <div id="login" class="system-theme active">
+                <h1>Вход в систему</h1>
+                <div>
+                    <img class="system-img " src="../img/img.png" alt="">
+                    <p>Поле "Логин": Введите свой логин (имя пользователя), который вы используете для доступа к системе "onoicrm". Логин обычно предоставляется администратором системы при регистрации.
+                        Поле "Пароль": Введите свой пароль. Будьте внимательны к регистру (заглавные и строчные буквы различаются).
+                        Кнопка "Вход": После ввода логина и пароля нажмите на эту кнопку. Если введенные данные верны, вы будете перенаправлены в личный кабинет системы "onoicrm".
+                    </p>
+                </div>
+            </div>
+            <div id="interface" class="system-theme">
+                <h1>Обзор интерфейса</h1>
+                <p>Здесь описывается, как работать с интерфейсом системы.</p>
+            </div>
+            <div id="services" class="system-theme">
+                <h1>Услуги и цены</h1>
+                <p>Информация об услугах и ценах.</p>
+            </div>
+            <div id="payment" class="system-theme">
+                <h1>Оплата услуги</h1>
+                <p>Как оплатить услугу.</p>
+            </div>
+            <div id="patient" class="system-theme">
+                <h1>Запись пациента</h1>
+                <p>Инструкция по записи пациента.</p>
+            </div>
+            <div id="staff" class="system-theme">
+                <h1>Создание персонала</h1>
+                <p>Инструкция по созданию персонала.</p>
+            </div>
+            <div id="youtube" class="system-theme">
+                <h1>Youtube</h1>
+                <p>Смотрите наши видео на Youtube.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function showContent(contentId) {
+        const sections = document.querySelectorAll('.system-theme');
+        sections.forEach(section => section.classList.remove('active'));
+        const activeSection = document.getElementById(contentId);
+        activeSection.classList.add('active');
+    }
+</script>
+</body>
+</html>
+
+<style>
+    .system-box {
+        display: flex;
+        gap: 30px;
+    }
+    .system-menu {
+        background-color: white;
+        padding: 30px;
+        margin-top: 80px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 400px;
+    }
+    .menu-item {
+        display: flex;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+    .menu-item:hover {
+        background-color: #eee;
+    }
+    .system-description{
+        width: 100%;
+    }
+    .system-title{
+        width: 200px;
+    }
+    .system-content {
+        margin-top: 100px;
+        flex-grow: 1;
+    }
+    .system-fox{
+        display: flex;
+    }
+    .system-img{
+        width: 200px;
+    }
+    .system-theme {
+        display: none;
+    }
+    .system-theme.active {
+        display: block;
+    }
+    @media (max-width: 480px) {
+        .system-menu {
+            width: 100%;
+        }
+    }
+</style>
+
